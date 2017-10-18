@@ -109,7 +109,7 @@ defmodule Stripe do
 
     response = case resp do
     {:ok, response} -> response
-    {:error, response} -> response
+    {:error, response} ->  %{body: resp.reason }
     end
 
     response.body
